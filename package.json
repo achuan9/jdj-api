@@ -1,0 +1,52 @@
+{
+  "name": "jdj-api",
+  "description": "API for JDJ (RESTful API using MySQL, on Node.js)",
+  "author": "achuan9",
+  "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/achuan9/jdj-api.git"
+  },
+  "main": "app.js",
+  "scripts": {
+    "dev": "nodemon --inspect -e js,json,html -r dotenv/config -r esm src/app.js"
+  },
+  "engines": {
+    "node": ">=10.5.0"
+  },
+  "dependencies": {
+    "dateformat": "^3.0.3",
+    "debug": "^4.1.1",
+    "esm": "^3.2.25",
+    "fs-extra": "^8.1.0",
+    "html-to-text": "^5.1.1",
+    "jsdom": "^15.2.1",
+    "jsonwebtoken": "^8.5.1",
+    "koa": "^2.11.0",
+    "koa-body": "^4.1.1",
+    "koa-compose": "^4.1.0",
+    "koa-compress": "^3.0.0",
+    "koa-flash": "^1.0.0",
+    "koa-router": "^7.4.0",
+    "koa-session": "^5.12.3",
+    "mongodb": "^3.4.0",
+    "mysql2": "^2.0.2",
+    "nodemailer": "^6.4.2",
+    "scrypt-kdf": "^2.0.1",
+    "useragent": "^2.3.0",
+    "xmlify": "^1.1.0"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "dotenv": "^8.2.0",
+    "eslint": "^6.7.2",
+    "husky": "^3.1.0",
+    "lint-staged": "^9.5.0",
+    "mocha": "^6.2.2",
+    "nodemon": "^2.0.2",
+    "nyc": "^14.1.1",
+    "supertest": "^4.0.2",
+    "swagger-jsdoc": "^3.5.0",
+    "testcafe": "^1.7.0"
+  }
+}
