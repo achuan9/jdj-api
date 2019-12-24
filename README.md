@@ -1,5 +1,10 @@
 # JDJ-API
 
+# 账户
+
+admin@user.com/admin
+guest@user.com/guest
+
 # File structure
 
 ```

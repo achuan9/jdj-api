@@ -105,7 +105,6 @@ class Middleware {
         return async function verifyJwtMiddleware(ctx, next) {
             const secretKey = process.env.JWT_SECRET_KEY;
             if (!secretKey) ctx.throw(401, 'No JWT Secret Key available');
-            ctx.request.header.authorization = ctx.request.header.authorization || process.env.JWT;
             if (!ctx.request.header.authorization) ctx.throw(401, 'Authorisation required');
 
             const [ scheme, token ] = ctx.request.header.authorization.split(' ');

@@ -1,0 +1,15 @@
+{
+  "name": "后台接口",
+  "version": "0.1.0",
+  "description": "后台接口，需要授权的接口请在请求头带上token",
+  "title": "Custom apiDoc browser title",
+  "url" : "http://localhost:3000/",
+  "template": {
+    "forceLanguage": "zh_cn",
+    "aloneDisplay": true
+  },
+  "header": {
+    "title": "通用规范",
+    "filename": "apiheader.md"
+  }
+}

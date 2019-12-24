@@ -1,5 +1,5 @@
 {
-  "name": "jdj-api",
+  "name": "jdj-apis",
   "description": "API for JDJ (RESTful API using MySQL, on Node.js)",
   "author": "achuan9",
   "version": "0.0.1",
@@ -9,12 +9,26 @@
   },
   "main": "app.js",
   "scripts": {
-    "dev": "nodemon --inspect -e js,json,html -r dotenv/config -r esm src/app.js"
+    "dev": "nodemon --inspect -e js,json,html -r dotenv/config -r esm src/app.js",
+    "test": "NODE_ENV=test jest --passWithNoTests",
+    "lint": "eslint app test",
+    "doc": "apidoc -i src/controllers -o src/public/apidoc"
   },
   "engines": {
     "node": ">=10.5.0"
   },
+  "lint-staged": {
+    "*.js": [
+      "eslint"
+    ]
+  },
+  "hooks": {
+    "pre-commit": "lint-staged",
+    "pre-push": "yarn test"
+  },
   "dependencies": {
+    "@koa/cors": "^3.0.0",
+    "apidoc": "^0.19.0",
     "dateformat": "^3.0.3",
     "debug": "^4.1.1",
     "esm": "^3.2.25",
@@ -24,11 +38,13 @@
     "jsonwebtoken": "^8.5.1",
     "koa": "^2.11.0",
     "koa-body": "^4.1.1",
+    "koa-bodyparser": "^4.2.1",
     "koa-compose": "^4.1.0",
     "koa-compress": "^3.0.0",
     "koa-flash": "^1.0.0",
     "koa-router": "^7.4.0",
     "koa-session": "^5.12.3",
+    "koa-static": "^5.0.0",
     "mongodb": "^3.4.0",
     "mysql2": "^2.0.2",
     "nodemailer": "^6.4.2",
@@ -46,7 +62,6 @@
     "nodemon": "^2.0.2",
     "nyc": "^14.1.1",
     "supertest": "^4.0.2",
-    "swagger-jsdoc": "^3.5.0",
     "testcafe": "^1.7.0"
   }
 }

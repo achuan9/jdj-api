@@ -1,11 +1,9 @@
-
 import Router from 'koa-router';
 import { getRoot } from '../controllers/root';
-import { getAuth } from '../controllers/auth';
+import ControllerUser from '../controllers/user';
 
 const router = new Router();
-router.get('/', getRoot);
-router.get('/auth', getAuth);  
+// router.get('/', (ctx) => ctx.body = 'hellow');
+router.post('/user/login', ControllerUser.login);
+
 export default router.middleware();
-
-
